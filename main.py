@@ -42,3 +42,9 @@ def classify():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)
+    
+    
+
+# Notes before deployment
+# 1. Enable The https://console.cloud.google.com/apis/library/iam.googleapis.com
+# 2. Make Sure The RAM Is Set to 2.0 GB
