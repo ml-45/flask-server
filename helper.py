@@ -11,7 +11,9 @@ with open("./assets/vectorizer.pickle", "rb") as f:
 def classification(payload):
     message = ""
     query = vectorizer.transform([payload])
+    
     transformed_query = scipy.sparse.csr_matrix.todense(query)
+    
     prediction = model.predict(transformed_query)
     percentage = prediction[0][0]
     

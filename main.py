@@ -16,7 +16,7 @@ def index_get():
 
 @app.route('/classify', methods=['POST'])
 def classify():
-    try:
+    try: 
         json_response = request.get_json()
         classification_result, percentage = classification(json_response["payload"])
        
@@ -42,9 +42,12 @@ def classify():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)
-    
-    
+
 
 # Notes before deployment
 # 1. Enable The https://console.cloud.google.com/apis/library/iam.googleapis.com
+# 5. Make Sure You Have The Necessary Permission To Perform The Deployment
 # 2. Make Sure The RAM Is Set to 2.0 GB
+# 3. Make Sure You Do Not Specify the Exact Version Of The Tensorflow in your requirements.txt
+# 4. Set the region to Jakarta and not any other region (optional)
+# 5. Git Naming Conventions That You Can Try (https://dev.to/ishanmakadia/git-commit-message-convention-that-you-can-follow-1709)
